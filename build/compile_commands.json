@@ -1,7 +1,0 @@
-[
-{
-  "directory": "C:/Users/victo/Workspace/chip8-emulator/build",
-  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/Users/victo/Workspace/chip8-emulator/src/. -g -o src\\core\\CMakeFiles\\app.dir\\main.cpp.obj -c C:\\Users\\victo\\Workspace\\chip8-emulator\\src\\core\\main.cpp",
-  "file": "C:\\Users\\victo\\Workspace\\chip8-emulator\\src\\core\\main.cpp"
-}
-]
