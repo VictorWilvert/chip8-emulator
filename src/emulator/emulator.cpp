@@ -33,54 +33,58 @@ void Emulator::instructionCycle() {
   program_counter += 2;
 
   // decode and execute instruction
-  switch ((opcode & 0xF000) >> 12)
+  switch ((opcode & 0xf000) >> 12)
   {
     case 0x00:
       std::cout << "NotImplementedException" << std::endl;
       break;
     case 0x01:
-      std::cout << "NotImplementedException" << std::endl;
+      program_counter = opcode & 0x0fff;
       break;
     case 0x02:
       std::cout << "NotImplementedException" << std::endl;
       break;
     case 0x03:
-      std::cout << "NotImplementedException" << std::endl;
+      if (cpu_registers[(opcode & 0x0f00) >> 8] == (opcode & 0x00ff))
+        program_counter += 2;
       break;
     case 0x04:
-      std::cout << "NotImplementedException" << std::endl;
+      if (cpu_registers[(opcode & 0x0f00) >> 8] != (opcode & 0x00ff))
+        program_counter += 2;
       break;
     case 0x05:
-      std::cout << "NotImplementedException" << std::endl;
+      if (cpu_registers[(opcode & 0x0f00) >> 8] == cpu_registers[(opcode & 0x00f0) >> 4])
+        program_counter += 2;
       break;
     case 0x06:
-      std::cout << "NotImplementedException" << std::endl;
+      cpu_registers[(opcode & 0x0f00) >> 8] = opcode & 0x00ff;
       break;
     case 0x07:
-      std::cout << "NotImplementedException" << std::endl;
+      cpu_registers[(opcode & 0x0f00) >> 8] += opcode & 0x00ff;
       break;
     case 0x08:
       std::cout << "NotImplementedException" << std::endl;
       break;
     case 0x09:
+      if (cpu_registers[(opcode & 0x0f00) >> 8] != cpu_registers[(opcode & 0x00f0) >> 4])
+        program_counter += 2;
+      break;
+    case 0x0a:
+      index_register = opcode & 0x00ff;
+      break;
+    case 0x0b:
+      program_counter = opcode & 0x0fff + cpu_registers[0];
+      break;
+    case 0x0c:
+      cpu_registers[(opcode & 0x0f00) >> 8] = (opcode & 0x00f);
+      break;
+    case 0x0d:
       std::cout << "NotImplementedException" << std::endl;
       break;
-    case 0x0A:
+    case 0x0e:
       std::cout << "NotImplementedException" << std::endl;
       break;
-    case 0x0B:
-      std::cout << "NotImplementedException" << std::endl;
-      break;
-    case 0x0C:
-      std::cout << "NotImplementedException" << std::endl;
-      break;
-    case 0x0D:
-      std::cout << "NotImplementedException" << std::endl;
-      break;
-    case 0x0E:
-      std::cout << "NotImplementedException" << std::endl;
-      break;
-    case 0x0F:
+    case 0x0f:
       std::cout << "NotImplementedException" << std::endl;
       break;
     default:
