@@ -33,3 +33,6 @@
 
 # Common build directories
 build*/
+
+# 
+.vscode/
