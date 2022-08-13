@@ -1,0 +1,7 @@
+C:/Users/victo/Workspace/chip8-emulator/build/CMakeFiles/edit_cache.dir
+C:/Users/victo/Workspace/chip8-emulator/build/CMakeFiles/rebuild_cache.dir
+C:/Users/victo/Workspace/chip8-emulator/build/src/CMakeFiles/edit_cache.dir
+C:/Users/victo/Workspace/chip8-emulator/build/src/CMakeFiles/rebuild_cache.dir
+C:/Users/victo/Workspace/chip8-emulator/build/src/core/CMakeFiles/app.dir
+C:/Users/victo/Workspace/chip8-emulator/build/src/core/CMakeFiles/edit_cache.dir
+C:/Users/victo/Workspace/chip8-emulator/build/src/core/CMakeFiles/rebuild_cache.dir
